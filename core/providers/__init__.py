@@ -2,8 +2,9 @@ import os
 
 from core.providers.base import ModelProvider
 from core.providers.fake import FakeProvider
+from core.providers.gemini import GeminiProvider
 
-PROVIDERS: dict[str, type[ModelProvider]] = {"fake": FakeProvider}
+PROVIDERS: dict[str, type[ModelProvider]] = {"fake": FakeProvider, "gemini": GeminiProvider}
 
 
 def get_provider(name: str | None = None) -> ModelProvider:
