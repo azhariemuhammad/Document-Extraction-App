@@ -28,7 +28,7 @@ Context is re-read every turn, so a long agent gets slower and costlier.
 ## Rules
 
 - **Boundaries:** only `core/providers/` imports vendor SDKs (`google.genai`); only `core/loaders/` knows file formats (`pymupdf`, `PIL`); only `profiles/` knows document domains. A tax-form or research-paper string in `extractor.py`, `validator.py` or `renderer.py` is a bug.
-- **Simple and explainable:** the owner explains every decision on video. Short comments for non-obvious choices. No frameworks (LangChain, agent frameworks, vector DBs, ORMs). Dependencies only: pymupdf, pillow, pydantic, pyyaml, rapidfuzz, google-genai, streamlit, pytest. Update `requirements.txt` in the same commit.
+- **Simple and explainable:** the owner explains every decision on video. Comment sparingly: only the few non-obvious decisions, never what the code already says. No frameworks (LangChain, agent frameworks, vector DBs, ORMs). Dependencies only: pymupdf, pillow, pydantic, pyyaml, rapidfuzz, google-genai, streamlit, pytest. Update `requirements.txt` in the same commit.
 - **Never crash the run:** per-page failures become `PageResult(error=...)`; other pages continue. Retry only `ProviderError.retryable` (429/5xx), max 4 attempts, exponential backoff; one repair call on parse failure.
 - **No `eval()`** for profile `checks`: parse `+`/`-` of keys. Normalize `Rp62.628.902` -> 62628902.
 - **Never guess values:** masked/illegible -> `unreadable`, absent -> `missing`, unsure -> `uncertain`, chart readings -> `estimated`. Validators never "fix" a value; they flag it.

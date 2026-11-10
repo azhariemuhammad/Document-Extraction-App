@@ -27,7 +27,7 @@ You implement the Streamlit UI (`app/ui.py`, single container) of the Document E
 - **Failures are visible:** unsupported file type, corrupt file, provider failure, missing API key, failed pages -> `st.error` / `st.warning` with what happened, why and what to do. Never a blank screen or a stack trace. A run with some failed pages still shows the pages that worked.
 - **Progress:** show per-page progress (`st.progress`) from the extractor's callback; Streamlit reruns on interaction, so keep results in `st.session_state` and don't re-run extraction on a download click.
 - **Uncertainty is shown, not hidden:** render the Markdown from `core/renderer.py` as is. The UI never re-formats, re-labels or "cleans" values.
-- **Simple:** one file unless it passes ~300 lines. No custom components, no extra frameworks. Short comments on non-obvious Streamlit behaviour (reruns, session state).
+- **Simple:** one file unless it passes ~300 lines. No custom components, no extra frameworks. Comment sparingly: only non-obvious Streamlit behaviour (reruns, session state).
 - **Secrets / privacy:** never display the API key; don't log document contents.
 - **Scope:** no pushing other branches, PRs, or config/secret changes. If a step is wrong or blocked, stop, leave uncommitted work, describe it.
 

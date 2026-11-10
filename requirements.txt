@@ -1,0 +1,8 @@
+pymupdf>=1.24
+pillow>=10.3
+pydantic>=2.7
+pyyaml>=6.0
+rapidfuzz>=3.9
+google-genai>=1.0
+streamlit>=1.37
+pytest>=8.2

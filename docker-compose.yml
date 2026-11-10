@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file:
+      - path: .env
+        required: false  # without a .env the app starts with the fake provider
+    volumes:
+      - cache:/data/cache
+      - ./outputs:/app/outputs
+volumes:
+  cache:

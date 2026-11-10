@@ -213,6 +213,8 @@ Follow the user's extraction instruction for WHAT to extract. These rules always
   without the owner's say-so; it is theirs to refine.
 - **No `eval()`, no new dependencies** beyond: pymupdf, pillow, pydantic, pyyaml, rapidfuzz, google-genai,
   streamlit, pytest. Anything else needs the owner's OK.
+- **Owner must understand everything:** prefer the simpler design; after each block give a plain-language walkthrough of every new file.
+- **Comments:** few. Only where the reason is non-obvious (a design choice, a guard, a trap). No comments that restate the code, no docstring on every function.
 - **Visible failures:** never swallow errors; they surface as `PageResult.error`, an issue, or `st.error`.
 - Commit one block/step at a time. Don't push to other branches, open PRs, or commit `.env` / API keys.
 

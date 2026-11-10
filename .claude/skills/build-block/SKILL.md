@@ -27,7 +27,7 @@ Interface first: when UI or eval depends on `core/`, finish the `core/` step and
 - **Block 6:** README sections are listed in `submit-check`; finish with it.
 
 ## 4. Verify and hand over
-After the agents report: `python -m pytest -q`, review the diff for boundary violations (vendor SDK outside `providers/`, format code outside `loaders/`, domain words outside `profiles/`). Then **stop** and tell the owner, in under 10 lines: what changed, the exact commands to run/verify (`docker compose up --build`, URL, what to click), what is unverified (e.g. no API key, sample file missing), and decisions that are theirs. Say plainly if any check failed or was skipped.
+After the agents report: `python -m pytest -q`, review the diff for boundary violations (vendor SDK outside `providers/`, format code outside `loaders/`, domain words outside `profiles/`). Add a **walkthrough for the owner**: for each new or changed file, 2-3 plain sentences on what it does, why it is designed that way, and how it connects to its neighbours, plus the 2-3 questions a reviewer would likely ask about it. The owner must understand every piece well enough to explain it on video; if something is hard to explain, simplify the code instead. Then **stop** and tell the owner, in under 10 lines: what changed, the exact commands to run/verify (`docker compose up --build`, URL, what to click), what is unverified (e.g. no API key, sample file missing), and decisions that are theirs. Say plainly if any check failed or was skipped.
 
 ## Principles
 - Simple, explainable code beats clever code; the owner must defend every decision on video.

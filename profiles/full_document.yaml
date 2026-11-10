@@ -1,0 +1,5 @@
+id: full_document
+name: "Full document - everything"
+instruction: |
+  Extract all content on the page: headings, paragraphs, tables, charts, form fields and checkboxes.
+  Keep the reading order. Use a stable `key` for tables and figures (e.g. "Table 2", "Fig. 3").
