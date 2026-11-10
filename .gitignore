@@ -4,5 +4,3 @@ __pycache__/
 .venv/
 .pytest_cache/
 data/
-outputs/*
-!outputs/.gitkeep

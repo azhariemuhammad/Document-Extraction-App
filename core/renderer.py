@@ -38,12 +38,14 @@ def _block(b: Block) -> list[str]:
         return [f"- [{mark}] {b.key or ''} {b.label or ''}{flag}".replace("  ", " "), f"  {_source(b)}"]
 
     # table or chart
-    caption = f"**{b.key + ': ' if b.key else ''}{b.label or ''}**"
+    title = ": ".join(x for x in (b.key, b.label) if x)
+    caption = f"**{title}**"
     if b.type == "chart":
         caption += " — ≈ values estimated from chart" + (f" (unit: {b.unit})" if b.unit else "")
     elif b.status != "ok":
         caption += f" {MARKERS[b.status]}"
-    out = [caption, ""] + _table(b.columns or [], b.rows or [])
+    out = [caption, ""]
+    out += _table(b.columns, b.rows or []) if b.columns else ["_No table data was extracted._"]
     if b.note:
         out += ["", f"_{b.note}_"]
     return out + ["", _source(b)]

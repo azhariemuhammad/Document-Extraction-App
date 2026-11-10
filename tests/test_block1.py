@@ -46,7 +46,7 @@ def test_bad_inputs_are_rejected_with_a_message():
 
 def test_end_to_end_with_fake_provider_marks_uncertainty():
     pages = load_document(make_pdf(2), "application/pdf")
-    results = extract_document(pages, FakeProvider(), "extract everything")
+    results = extract_document(b"doc", pages, FakeProvider(), "extract everything")
     assert all(r.error is None for r in results)
     statuses = {b.status for r in results for b in r.blocks}
     assert {"uncertain", "estimated", "unreadable"} <= statuses
@@ -56,6 +56,6 @@ def test_end_to_end_with_fake_provider_marks_uncertainty():
 
 def test_failed_page_is_reported_not_raised():
     pages = load_document(make_pdf(2), "application/pdf")
-    results = extract_document(pages, FakeProvider(fail_times=1, retryable=False), "x")
+    results = extract_document(b"doc", pages, FakeProvider(fail_times=1, retryable=False), "x")
     assert results[0].error and results[1].error is None
     assert "This page failed" in render_markdown(results)
