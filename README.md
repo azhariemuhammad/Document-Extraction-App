@@ -119,8 +119,34 @@ pending and does not count them, so the chart value error is reported only over 
 
 ### Results
 
-**Pending.** The gold items have to be verified by hand against the sources before accuracy can be reported.
-Paste the table from `eval/results.md` here once that is done. No numbers are claimed until then.
+Baseline, scored offline by `eval/run_eval.py` against hand-verified gold items (`eval/results.md` has the full
+output, including every failed item). Both runs used `gemini-3.1-flash-lite`. The research run is an earlier saved
+output (`full_document` profile) made before the empty-table check was added, so treat it as a first baseline.
+
+| Metric | Tax form image (`tax_form_fields`) | Research PDF, 18 pages (`full_document`) |
+|---|---|---|
+| Gold items verified / left pending | 32 / 0 | 26 / 11 (unverified chart items) |
+| Field accuracy | 18/21 (86%) | 0/3 (title, author and a number sit in `excerpt`, not `text`) |
+| Checkbox accuracy | 2/11 (18%) | n/a |
+| Table-cell accuracy | n/a | 8/17 (47%) |
+| Chart values | n/a | 0/6 (the charts came back without values) |
+| Grounded-evidence rate | n/a (image) | 97% |
+| Arithmetic checks passed | 3/4 | n/a |
+| Page coverage | 100% | 100% |
+| Latency per page | 5.9 s | 31.1 s |
+| Tokens in / out | 1,500 / 2,126 | 61,132 / 34,880 |
+| Retries / failed pages | 0 / 0 | 7 / 0 |
+
+How to read it:
+
+- **Checkboxes:** the model reports only the ticked boxes. Gold unticked boxes that are absent from the output count as
+  wrong, so the score is strict. Wrong keys are counted too (for example the line 9 checkbox keyed `9`, not `9a`).
+- **Tax fields:** the 3 misses are two fields the model skipped (TAHUN PAJAK, KLU) and line 11 keyed as `11a`, which also makes one
+  arithmetic check (11 = 9 - 10c) fail.
+- **PDF tables:** every miss is a table the model named but returned without columns or rows (Tables 1, 2, 3, 7).
+  The validator now flags these as `uncertain`; they are not yet recovered automatically.
+- **Grounding:** 97% of PDF excerpts were found in the page text layer.
+- The sets are small (a sample, not a benchmark), and the accuracy figures are not a claim about other documents.
 
 ## Limitations
 

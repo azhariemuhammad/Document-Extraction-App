@@ -1,6 +1,6 @@
 # Evaluation results
 
-## tax_form_spt_1771__tax_form_fields.json vs tax_form.json (gold status: UNVERIFIED)
+## tax_form_spt_1771__tax_form_fields.json vs tax_form.json (gold status: VERIFIED)
 
 | Metric | Value |
 |---|---|
@@ -43,7 +43,7 @@ Failed items:
 | T31 | 13a | False | not found |
 | T32 | 13b | False | not found |
 
-## research_paper_applied_ergonomics__full_document.json vs research_pdf.json (gold status: UNVERIFIED)
+## research_paper_applied_ergonomics__full_document.json vs research_pdf.json (gold status: VERIFIED)
 
 | Metric | Value |
 |---|---|

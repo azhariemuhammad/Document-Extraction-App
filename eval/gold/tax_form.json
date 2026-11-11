@@ -1,6 +1,6 @@
 {
   "source": "tax_form_spt_1771",
-  "status": "UNVERIFIED",
+  "status": "VERIFIED",
   "_readme": "Owner hand-checks every item against the image, then fills expected and sets status to VERIFIED. Items with expected null are skipped by the scorer. kind: field|checkbox|table_cell|chart. field: text|checked|cell. match: exact|numeric|numeric_tol|contains.",
   "items": [
     [
