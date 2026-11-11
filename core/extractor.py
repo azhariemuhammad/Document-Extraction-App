@@ -1,6 +1,7 @@
 """Per-page extraction: cache -> provider call (with retry) -> parse (with one repair call)."""
 import hashlib
 import json
+import logging
 import os
 import time
 from collections.abc import Callable
@@ -13,6 +14,7 @@ from core.prompts import PROMPT_VERSION, build_prompt
 from core.providers.base import GenerateResponse, ModelProvider, ProviderError
 
 MAX_ATTEMPTS = 4
+log = logging.getLogger("extraction")  # the UI shows these lines live; docker logs gets them too
 _BLOCKS = TypeAdapter(list[Block])
 
 
@@ -58,9 +60,16 @@ def extract_page(file_bytes: bytes, page: PageUnit, provider: ModelProvider, ins
     ).hexdigest()
     cache_file = Path(os.getenv("CACHE_DIR", "data/cache")) / f"{key}.json"
     if cache_file.exists():
+        log.info("page %d: cache hit, no model call", page.page_no)
         return PageResult.model_validate_json(cache_file.read_text()).model_copy(update={"cached": True})
 
+    log.info("page %d: calling %s/%s", page.page_no, provider.name, provider.model)
     result = _call_provider(page, provider, instruction, sleep)
+    if result.error:
+        log.error("page %d: FAILED after %d call(s): %s", page.page_no, result.attempts, result.error)
+    else:
+        log.info("page %d: %d blocks, %d call(s), %d ms, tokens %s/%s", page.page_no, len(result.blocks),
+                 result.attempts, result.latency_ms, result.input_tokens, result.output_tokens)
     if not result.error:  # failures are never cached, so a re-run tries again
         cache_file.parent.mkdir(parents=True, exist_ok=True)
         cache_file.write_text(result.model_dump_json())
@@ -79,6 +88,7 @@ def _call_provider(page: PageUnit, provider: ModelProvider, instruction: str, sl
         try:
             blocks = _parse(resp.text, page.page_no)
         except ValueError as e:  # includes bad JSON and schema violations
+            log.warning("page %d: invalid JSON, sending one repair call: %s", page.page_no, str(e)[:200])
             repair = (f"{prompt}\n\nYour previous answer was invalid ({e}).\n"
                       f"Previous answer:\n{resp.text}\n\nReturn corrected JSON only.")
             resp = _generate_with_retry(provider, repair, [page.image_png], schema, tally, sleep)
@@ -101,6 +111,7 @@ def _generate_with_retry(provider, prompt, images, schema, tally: _Tally, sleep)
         except ProviderError as e:
             if not e.retryable or attempt == MAX_ATTEMPTS:
                 raise
+            log.warning("attempt %d/%d failed (%s); retrying in %ds", attempt, MAX_ATTEMPTS, e, 2 ** attempt)
             sleep(2 ** attempt)  # 2s, 4s, 8s: gives a rate limit or overloaded model time to recover
             continue
         tally.add(resp)
