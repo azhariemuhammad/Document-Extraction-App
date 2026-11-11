@@ -96,10 +96,10 @@
 - provider: gemini
 - model: gemini-3.8-flash
 - pages: 1
-- total time: 338.5s
+- total time: 0.0s
 - tokens (in/out): 1500 / 8322
-- provider calls: 1
-- cache hits: 0
+- provider calls: 0
+- cache hits: 1
 - coverage: 100%
 - grounded evidence: n/a
 - arithmetic checks: 4/4

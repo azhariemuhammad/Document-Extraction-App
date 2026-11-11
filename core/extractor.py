@@ -123,13 +123,18 @@ def _generate_with_heartbeat(provider, prompt, images, schema, every: float = 5.
     """One model call can take minutes. Run it in a thread and log 'still waiting' from this thread,
     so the UI shows the app is alive. (Streamlit only allows UI updates from the script's own thread.)"""
     started = time.perf_counter()
-    with ThreadPoolExecutor(max_workers=1) as pool:
+    pool = ThreadPoolExecutor(max_workers=1)
+    try:
         future = pool.submit(provider.generate, prompt, images, schema)
         while True:
             try:
                 return future.result(timeout=every)
             except WaitTimeout:
                 log.info("  still waiting for the model... %ds", time.perf_counter() - started)
+    finally:
+        # wait=False: if the user presses Stop, Streamlit interrupts this thread and must not block until
+        # the HTTP call ends. The abandoned call can't be killed; it finishes in the background.
+        pool.shutdown(wait=False, cancel_futures=True)
 
 
 def _parse(text: str, page_no: int) -> list[Block]:
