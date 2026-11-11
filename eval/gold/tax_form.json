@@ -3,7 +3,551 @@
   "status": "UNVERIFIED",
   "_readme": "Owner hand-checks every item against the image, then fills expected and sets status to VERIFIED. Items with expected null are skipped by the scorer. kind: field|checkbox|table_cell|chart. field: text|checked|cell. match: exact|numeric|numeric_tol|contains.",
   "items": [
-    {"key": "9", "page": 1, "kind": "field", "field": "text", "expected": null, "match": "numeric", "_todo": "check line 9 (6-7-8c) on the image"},
-    {"key": "9.a", "page": 1, "kind": "checkbox", "field": "checked", "expected": null, "match": "exact", "_todo": "check whether box 9.a is ticked (true/false)"}
+    [
+      {
+        "id": "T01",
+        "key": "TAHUN PAJAK",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": "2021",
+        "match": "exact",
+        "region_px": [
+          340,
+          28,
+          422,
+          50
+        ],
+        "note": "Tax year, header",
+        "verified": true
+      },
+      {
+        "id": "T02",
+        "key": "NPWP",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": "12 345 678 9 000 000",
+        "match": "normalized",
+        "region_px": [
+          115,
+          63,
+          320,
+          77
+        ],
+        "note": "Compare digits only",
+        "verified": true
+      },
+      {
+        "id": "T03",
+        "key": "NAMA WAJIB PAJAK",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": "PT ABC EFG",
+        "match": "normalized",
+        "region_px": [
+          115,
+          77,
+          232,
+          89
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T04",
+        "key": "JENIS USAHA",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": "PERDAGANGAN",
+        "match": "normalized",
+        "region_px": [
+          115,
+          89,
+          236,
+          100
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T05",
+        "key": "KLU",
+        "page": 1,
+        "kind": "field",
+        "field": "status",
+        "expected": "unreadable",
+        "match": "exact",
+        "region_px": [
+          350,
+          88,
+          413,
+          100
+        ],
+        "note": "Masked 'xx xx xx': must NOT be invented",
+        "verified": true
+      },
+      {
+        "id": "T06",
+        "key": "NO. TELEPON",
+        "page": 1,
+        "kind": "field",
+        "field": "status",
+        "expected": "unreadable",
+        "match": "exact",
+        "region_px": [
+          115,
+          100,
+          250,
+          112
+        ],
+        "note": "Masked 'xxx-xxxxxxx'",
+        "verified": true
+      },
+      {
+        "id": "T07",
+        "key": "PERIODE PEMBUKUAN",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": "2020 s.d. 2021",
+        "match": "contains",
+        "region_px": [
+          115,
+          111,
+          232,
+          124
+        ],
+        "note": "Accept if both 2020 and 2021 present",
+        "verified": true
+      },
+      {
+        "id": "T08",
+        "key": "DIAUDIT",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          145,
+          138,
+          180,
+          150
+        ],
+        "note": "Empty box",
+        "verified": true
+      },
+      {
+        "id": "T09",
+        "key": "TIDAK DIAUDIT",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": true,
+        "match": "exact",
+        "region_px": [
+          253,
+          137,
+          303,
+          150
+        ],
+        "note": "X ticked",
+        "verified": true
+      },
+      {
+        "id": "T10",
+        "key": "1",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 62628902,
+        "match": "numeric",
+        "region_px": [
+          235,
+          249,
+          421,
+          265
+        ],
+        "note": "Penghasilan Neto Fiskal",
+        "verified": true
+      },
+      {
+        "id": "T11",
+        "key": "2",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 20000000,
+        "match": "numeric",
+        "region_px": [
+          235,
+          266,
+          421,
+          281
+        ],
+        "note": "Kompensasi Kerugian Fiskal",
+        "verified": true
+      },
+      {
+        "id": "T12",
+        "key": "3",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 42628902,
+        "match": "numeric",
+        "region_px": [
+          235,
+          282,
+          421,
+          298
+        ],
+        "note": "PKP = 1 - 2",
+        "verified": true
+      },
+      {
+        "id": "T13",
+        "key": "4a",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          60,
+          314,
+          82,
+          324
+        ],
+        "note": "Tarif Ps.17(1)b",
+        "verified": true
+      },
+      {
+        "id": "T14",
+        "key": "4b",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          60,
+          324,
+          82,
+          332
+        ],
+        "note": "Tarif Ps.17(2b)",
+        "verified": false
+      },
+      {
+        "id": "T15",
+        "key": "4c",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": true,
+        "match": "exact",
+        "region_px": [
+          60,
+          332,
+          82,
+          342
+        ],
+        "note": "Tarif Ps.31E: X ticked",
+        "verified": true
+      },
+      {
+        "id": "T16",
+        "key": "4",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 2500100,
+        "match": "numeric",
+        "region_px": [
+          350,
+          321,
+          421,
+          335
+        ],
+        "note": "PPh Terutang",
+        "verified": true
+      },
+      {
+        "id": "T17",
+        "key": "5",
+        "page": 1,
+        "kind": "field",
+        "field": "status",
+        "expected": "missing",
+        "match": "exact",
+        "region_px": [
+          235,
+          344,
+          421,
+          359
+        ],
+        "note": "Blank in source: should be missing (or empty), not 0",
+        "verified": true
+      },
+      {
+        "id": "T18",
+        "key": "6",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 2500100,
+        "match": "numeric",
+        "region_px": [
+          350,
+          364,
+          421,
+          379
+        ],
+        "note": "= 4 + 5",
+        "verified": true
+      },
+      {
+        "id": "T19",
+        "key": "7",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 0,
+        "match": "numeric",
+        "region_px": [
+          380,
+          382,
+          421,
+          396
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T20",
+        "key": "8a",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 600000,
+        "match": "numeric",
+        "region_px": [
+          360,
+          398,
+          421,
+          412
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T21",
+        "key": "8b",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 0,
+        "match": "numeric",
+        "region_px": [
+          388,
+          416,
+          421,
+          430
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T22",
+        "key": "8c",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 600000,
+        "match": "numeric",
+        "region_px": [
+          360,
+          433,
+          421,
+          447
+        ],
+        "note": "= 8a + 8b",
+        "verified": true
+      },
+      {
+        "id": "T23",
+        "key": "9a",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": true,
+        "match": "exact",
+        "region_px": [
+          62,
+          451,
+          86,
+          462
+        ],
+        "note": "Harus dibayar sendiri: X ticked",
+        "verified": true
+      },
+      {
+        "id": "T24",
+        "key": "9b",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          62,
+          462,
+          86,
+          473
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T25",
+        "key": "9",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 1900100,
+        "match": "numeric",
+        "region_px": [
+          350,
+          452,
+          421,
+          468
+        ],
+        "note": "= 6 - 7 - 8c",
+        "verified": true
+      },
+      {
+        "id": "T26",
+        "key": "10c",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 0,
+        "match": "numeric",
+        "region_px": [
+          392,
+          523,
+          421,
+          539
+        ],
+        "note": "= 10a + 10b",
+        "verified": true
+      },
+      {
+        "id": "T27",
+        "key": "11a",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          62,
+          550,
+          86,
+          559
+        ],
+        "note": "EMPTY in source even though line 11 > 0. Report as-is",
+        "verified": true
+      },
+      {
+        "id": "T28",
+        "key": "11b",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          62,
+          559,
+          86,
+          569
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T29",
+        "key": "11",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": 1900100,
+        "match": "numeric",
+        "region_px": [
+          350,
+          546,
+          421,
+          561
+        ],
+        "note": "= 9 - 10c",
+        "verified": true
+      },
+      {
+        "id": "T30",
+        "key": "12",
+        "page": 1,
+        "kind": "field",
+        "field": "text",
+        "expected": "30-04-2022",
+        "match": "date",
+        "region_px": [
+          274,
+          567,
+          376,
+          584
+        ],
+        "note": "Payment date; normalize separators",
+        "verified": true
+      },
+      {
+        "id": "T31",
+        "key": "13a",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          62,
+          596,
+          86,
+          607
+        ],
+        "note": "",
+        "verified": true
+      },
+      {
+        "id": "T32",
+        "key": "13b",
+        "page": 1,
+        "kind": "checkbox",
+        "field": "checked",
+        "expected": false,
+        "match": "exact",
+        "region_px": [
+          243,
+          596,
+          262,
+          607
+        ],
+        "note": "",
+        "verified": true
+      }
+    ]
   ]
 }

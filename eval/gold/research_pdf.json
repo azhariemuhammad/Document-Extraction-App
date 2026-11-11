@@ -3,7 +3,728 @@
   "status": "UNVERIFIED",
   "_readme": "Owner hand-checks every item against the PDF. For table_cell and chart items add row (row label) and column (column header) and use field cell. Charts use numeric_tol.",
   "items": [
-    {"key": "Table 2", "page": null, "kind": "table_cell", "field": "cell", "row": null, "column": null, "expected": null, "match": "numeric", "_todo": "pick a cell, fill page, row, column, expected"},
-    {"key": "Fig. 3", "page": null, "kind": "chart", "field": "cell", "row": null, "column": null, "expected": null, "match": "numeric_tol", "_todo": "pick a bar, fill page, row, column, expected"}
+    [
+      {
+        "id": "R01",
+        "page": 1,
+        "kind": "text",
+        "key": null,
+        "expected": "A head mounted augmented reality design practice for maintenance assembly",
+        "match": "contains",
+        "note": "Title (heading block)",
+        "region_pt": [
+          37.6,
+          161.0,
+          250.6,
+          183.0
+        ],
+        "verified": true,
+        "row": null,
+        "column": null,
+        "tol": null
+      },
+      {
+        "id": "R02",
+        "page": 1,
+        "kind": "text",
+        "key": null,
+        "expected": "Dedy Ariansyah",
+        "match": "contains",
+        "note": "First author",
+        "region_pt": [
+          37.6,
+          206.7,
+          112.2,
+          223.9
+        ],
+        "verified": true,
+        "row": null,
+        "column": null,
+        "tol": null
+      },
+      {
+        "id": "R03",
+        "page": 1,
+        "kind": "text",
+        "key": null,
+        "expected": "14%",
+        "match": "contains",
+        "note": "Abstract: 3D animation gave 14% improvement over video in task completion time",
+        "region_pt": [
+          323.8,
+          364.1,
+          338.0,
+          375.8
+        ],
+        "verified": true,
+        "row": null,
+        "column": null,
+        "tol": null
+      },
+      {
+        "id": "R05",
+        "page": 4,
+        "kind": "table_cell",
+        "key": "Table 1",
+        "row": "Kim et al. (2019)",
+        "column": "Attributes",
+        "expected": "HMD types",
+        "match": "contains",
+        "note": "First row of Table 1",
+        "region_pt": [
+          312.6,
+          97.9,
+          360.7,
+          108.4
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R06",
+        "page": 5,
+        "kind": "table_cell",
+        "key": "Table 1",
+        "row": "Zhu et al. (2013)",
+        "column": "Attributes",
+        "expected": "LOD",
+        "match": "contains",
+        "note": "Continuation page: block must still be keyed 'Table 1'",
+        "region_pt": [
+          43.6,
+          156.9,
+          91.7,
+          167.3
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R07",
+        "page": 6,
+        "kind": "table_row",
+        "key": "Table 2",
+        "row": "VV",
+        "column": null,
+        "expected": [
+          "Transitioning",
+          "Verbal",
+          "Vocal"
+        ],
+        "match": "row_contains_all",
+        "note": "Grouped rows: a row under VV must contain all three; tests hierarchy is kept",
+        "region_pt": [
+          523.0,
+          330.3,
+          538.9,
+          340.7
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R08",
+        "page": 7,
+        "kind": "table_cell",
+        "key": "Table 3",
+        "row": "VH",
+        "column": "N",
+        "expected": 11,
+        "match": "numeric",
+        "note": "",
+        "region_pt": [
+          43.6,
+          128.2,
+          52.6,
+          138.6
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R09",
+        "page": 7,
+        "kind": "table_cell",
+        "key": "Table 3",
+        "row": "CG",
+        "column": "Age",
+        "expected": "26.6 (4.55)",
+        "match": "normalized",
+        "note": "Mean (SD) may wrap onto 2 lines",
+        "region_pt": [
+          145.9,
+          111.1,
+          158.4,
+          121.5
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R10",
+        "page": 7,
+        "kind": "table_cell",
+        "key": "Table 3",
+        "row": "CG",
+        "column": "M exp",
+        "expected": "219.5 (437.05)",
+        "match": "normalized",
+        "note": "",
+        "region_pt": [
+          185.6,
+          111.1,
+          201.7,
+          121.5
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R11",
+        "page": 7,
+        "kind": "table_cell",
+        "key": "Table 3",
+        "row": "AV",
+        "column": "CT - Age",
+        "expected": "-.739*",
+        "match": "normalized",
+        "note": "Keep minus sign AND significance star",
+        "region_pt": [
+          321.1,
+          179.6,
+          333.7,
+          190.1
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R12",
+        "page": 7,
+        "kind": "table_cell",
+        "key": "Table 3",
+        "row": "VH",
+        "column": "Error - Mexp",
+        "expected": ".725*",
+        "match": "normalized",
+        "note": "Keep significance star",
+        "region_pt": [
+          473.4,
+          128.2,
+          486.0,
+          138.6
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R13",
+        "page": 10,
+        "kind": "table_cell",
+        "key": "Table 4",
+        "row": "VH",
+        "column": "Improvement over control group",
+        "expected": 31.8,
+        "match": "numeric",
+        "note": "",
+        "region_pt": [
+          86.5,
+          328.5,
+          99.0,
+          338.9
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R14",
+        "page": 10,
+        "kind": "table_cell",
+        "key": "Table 4",
+        "row": "AV",
+        "column": "Improvement over control group",
+        "expected": 43.1,
+        "match": "numeric",
+        "note": "",
+        "region_pt": [
+          86.5,
+          354.2,
+          99.0,
+          364.6
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R15",
+        "page": 10,
+        "kind": "table_cell",
+        "key": "Table 4",
+        "row": "AH",
+        "column": "Improvement Variability",
+        "expected": 75.1,
+        "match": "numeric",
+        "note": "",
+        "region_pt": [
+          212.9,
+          337.1,
+          225.4,
+          347.5
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R16",
+        "page": 11,
+        "kind": "table_cell",
+        "key": "Table 5",
+        "row": "AH",
+        "column": "SCL D",
+        "expected": "1.49 (0.62)",
+        "match": "normalized",
+        "note": "Hierarchical header: column must say SCL + D (Difference)",
+        "region_pt": [
+          152.2,
+          642.5,
+          164.8,
+          653.0
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R17",
+        "page": 11,
+        "kind": "table_cell",
+        "key": "Table 5",
+        "row": "CG",
+        "column": "HR T",
+        "expected": "0.15 (0.29)",
+        "match": "normalized",
+        "note": "",
+        "region_pt": [
+          469.1,
+          711.1,
+          481.7,
+          721.5
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R18",
+        "page": 11,
+        "kind": "table_cell",
+        "key": "Table 5",
+        "row": "VV",
+        "column": "RMSSD D",
+        "expected": "-0.18 (0.42)",
+        "match": "normalized",
+        "note": "Source prints '− 0.18' (spaced minus) — normalize",
+        "region_pt": [
+          376.4,
+          693.9,
+          389.0,
+          704.4
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R19",
+        "page": 11,
+        "kind": "table_cell",
+        "key": "Table 5",
+        "row": "VH",
+        "column": "SCR B",
+        "expected": "-0.57 (0.29)",
+        "match": "normalized",
+        "note": "",
+        "region_pt": [
+          228.5,
+          676.8,
+          241.0,
+          687.2
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R20",
+        "page": 11,
+        "kind": "table_cell",
+        "key": "Table 6",
+        "row": "VV",
+        "column": "Data availability",
+        "expected": 4,
+        "match": "numeric",
+        "note": "",
+        "region_pt": [
+          458.8,
+          357.6,
+          490.6,
+          368.0
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R21",
+        "page": 11,
+        "kind": "table_cell",
+        "key": "Table 6",
+        "row": "VV",
+        "column": "Analysis of variance",
+        "expected": "Insufficient residual for degree of freedom",
+        "match": "contains",
+        "note": "Wrapped cell text",
+        "region_pt": [
+          458.8,
+          357.6,
+          490.6,
+          368.0
+        ],
+        "verified": false,
+        "tol": null
+      },
+      {
+        "id": "R22",
+        "page": 13,
+        "kind": "table_cell",
+        "key": "Table 7",
+        "row": "TWO-WAY MANOVA",
+        "column": "IM",
+        "expected": "F = 1.454 (p = 0.247)",
+        "match": "normalized",
+        "note": "",
+        "region_pt": [
+          410.8,
+          693.9,
+          426.9,
+          704.4
+        ],
+        "verified": true,
+        "tol": null
+      },
+      {
+        "id": "R23",
+        "page": 10,
+        "kind": "chart_value",
+        "key": "Fig. 2",
+        "row": "Control",
+        "column": "median",
+        "expected": 920,
+        "match": "numeric_tol",
+        "tol": {
+          "rel": 0.08
+        },
+        "note": "Box plot median, measured from pixels; seconds",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          255.9
+        ],
+        "verified": false
+      },
+      {
+        "id": "R24",
+        "page": 10,
+        "kind": "chart_value",
+        "key": "Fig. 2",
+        "row": "VH",
+        "column": "median",
+        "expected": 640,
+        "match": "numeric_tol",
+        "tol": {
+          "rel": 0.08
+        },
+        "note": "Box plot median, measured from pixels; seconds",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          255.9
+        ],
+        "verified": false
+      },
+      {
+        "id": "R25",
+        "page": 10,
+        "kind": "chart_value",
+        "key": "Fig. 2",
+        "row": "AH",
+        "column": "median",
+        "expected": 510,
+        "match": "numeric_tol",
+        "tol": {
+          "rel": 0.08
+        },
+        "note": "Box plot median, measured from pixels; seconds",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          255.9
+        ],
+        "verified": false
+      },
+      {
+        "id": "R26",
+        "page": 10,
+        "kind": "chart_value",
+        "key": "Fig. 2",
+        "row": "AV",
+        "column": "median",
+        "expected": 525,
+        "match": "numeric_tol",
+        "tol": {
+          "rel": 0.08
+        },
+        "note": "Box plot median, measured from pixels; seconds",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          255.9
+        ],
+        "verified": false
+      },
+      {
+        "id": "R27",
+        "page": 10,
+        "kind": "chart_label",
+        "key": "Fig. 2",
+        "expected": "second",
+        "match": "contains",
+        "note": "Y-axis unit must be kept",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          255.9
+        ],
+        "verified": false,
+        "row": null,
+        "column": null,
+        "tol": null
+      },
+      {
+        "id": "R28",
+        "page": 10,
+        "kind": "chart_value",
+        "key": "Fig. 3",
+        "row": "Control",
+        "column": "median",
+        "expected": 2,
+        "match": "numeric_tol",
+        "tol": {
+          "abs": 0.5
+        },
+        "note": "Number of errors; AH/AV boxes collapsed at 0",
+        "region_pt": [
+          119.8,
+          525.8,
+          475.5,
+          726.2
+        ],
+        "verified": false
+      },
+      {
+        "id": "R29",
+        "page": 10,
+        "kind": "chart_value",
+        "key": "Fig. 3",
+        "row": "AH",
+        "column": "median",
+        "expected": 0,
+        "match": "numeric_tol",
+        "tol": {
+          "abs": 0.3
+        },
+        "note": "Outlier (31) at 1 must not be read as median",
+        "region_pt": [
+          119.8,
+          525.8,
+          475.5,
+          726.2
+        ],
+        "verified": false
+      },
+      {
+        "id": "R30",
+        "page": 11,
+        "kind": "chart_value",
+        "key": "Fig. 4",
+        "row": "Mental",
+        "column": "CG",
+        "expected": 42.7,
+        "match": "numeric_tol",
+        "tol": {
+          "abs": 2.5
+        },
+        "note": "Bar height measured from pixels (score 0–60)",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          267.6
+        ],
+        "verified": false
+      },
+      {
+        "id": "R31",
+        "page": 11,
+        "kind": "chart_value",
+        "key": "Fig. 4",
+        "row": "Mental",
+        "column": "VV",
+        "expected": 47.4,
+        "match": "numeric_tol",
+        "tol": {
+          "abs": 2.5
+        },
+        "note": "Bar height measured from pixels (score 0–60)",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          267.6
+        ],
+        "verified": false
+      },
+      {
+        "id": "R32",
+        "page": 11,
+        "kind": "chart_value",
+        "key": "Fig. 4",
+        "row": "Frustration",
+        "column": "VH",
+        "expected": 11.2,
+        "match": "numeric_tol",
+        "tol": {
+          "abs": 2.5
+        },
+        "note": "Bar height measured from pixels (score 0–60)",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          267.6
+        ],
+        "verified": false
+      },
+      {
+        "id": "R33",
+        "page": 11,
+        "kind": "chart_value",
+        "key": "Fig. 4",
+        "row": "Total",
+        "column": "AH",
+        "expected": 25.2,
+        "match": "numeric_tol",
+        "tol": {
+          "abs": 2.5
+        },
+        "note": "Bar height measured from pixels (score 0–60)",
+        "region_pt": [
+          119.8,
+          55.4,
+          475.5,
+          267.6
+        ],
+        "verified": false
+      },
+      {
+        "id": "R34",
+        "page": 12,
+        "kind": "chart_value",
+        "key": "Fig. 5",
+        "row": "V-V",
+        "column": "VH",
+        "expected": 48.7,
+        "match": "numeric_tol",
+        "tol": {
+          "rel": 0.1
+        },
+        "note": "Transition chart (bottom panel), VH series",
+        "region_pt": [
+          56.1,
+          55.4,
+          539.1,
+          384.0
+        ],
+        "verified": false
+      },
+      {
+        "id": "R35",
+        "page": 12,
+        "kind": "chart_value",
+        "key": "Fig. 5",
+        "row": "GB-GB",
+        "column": "VH",
+        "expected": 50.5,
+        "match": "numeric_tol",
+        "tol": {
+          "rel": 0.1
+        },
+        "note": "Transition chart (bottom panel), VH series",
+        "region_pt": [
+          56.1,
+          55.4,
+          539.1,
+          384.0
+        ],
+        "verified": false
+      },
+      {
+        "id": "R36",
+        "page": 12,
+        "kind": "chart_value",
+        "key": "Fig. 5",
+        "row": "V-GB",
+        "column": "VH",
+        "expected": 28.3,
+        "match": "numeric_tol",
+        "tol": {
+          "rel": 0.1
+        },
+        "note": "Transition chart (bottom panel), VH series",
+        "region_pt": [
+          56.1,
+          55.4,
+          539.1,
+          384.0
+        ],
+        "verified": false
+      },
+      {
+        "id": "R37",
+        "page": null,
+        "kind": "status_all",
+        "key": "Fig.*",
+        "expected": "estimated",
+        "match": "all_chart_blocks",
+        "note": "Every chart block must be status=estimated",
+        "verified": false,
+        "row": null,
+        "column": null,
+        "tol": null
+      },
+      {
+        "id": "R38",
+        "page": null,
+        "kind": "coverage",
+        "key": null,
+        "expected": 18,
+        "match": "pages_with_result",
+        "note": "All 18 pages processed, none failed",
+        "verified": false,
+        "row": null,
+        "column": null,
+        "tol": null
+      }
+    ]
   ]
 }
