@@ -1,5 +1,6 @@
 """One run from file bytes to Markdown. Used by the UI and the CLI so they behave identically."""
 import json
+import logging
 import os
 import time
 from collections.abc import Callable
@@ -12,6 +13,8 @@ from core.models import PageResult, ValidationReport
 from core.providers.base import ModelProvider
 from core.renderer import render_markdown
 from core.validator import validate
+
+log = logging.getLogger("extraction")
 
 
 @dataclass
@@ -26,8 +29,11 @@ def run_pipeline(data: bytes, mime: str, instruction: str, provider: ModelProvid
                  checks: list[dict[str, str]] = [],
                  on_progress: Callable[[int, int], None] | None = None) -> RunOutput:
     started = time.perf_counter()
+    log.info("loading document (%s, %d KB)", mime, len(data) // 1024)
     pages = load_document(data, mime)
+    log.info("loaded %d page(s)", len(pages))
     results = extract_document(data, pages, provider, instruction, on_progress)
+    log.info("validating...")
     report = validate(results, len(pages), {p.page_no: p.text_layer for p in pages}, checks)
 
     run_info = {
@@ -43,7 +49,10 @@ def run_pipeline(data: bytes, mime: str, instruction: str, provider: ModelProvid
         "arithmetic checks": report.checks_passed or "n/a",
         "failed pages": [r.page for r in results if r.error] or "none",
     }
-    return RunOutput(results, report, run_info, render_markdown(results, report, run_info))
+    log.info("validation: coverage %s, %d issue(s); rendering Markdown", f"{report.coverage:.0%}", len(report.issues))
+    markdown = render_markdown(results, report, run_info)
+    log.info("done in %s", run_info["total time"])
+    return RunOutput(results, report, run_info, markdown)
 
 
 def save_outputs(out: RunOutput, name: str) -> Path:

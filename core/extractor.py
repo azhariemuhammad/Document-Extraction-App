@@ -4,6 +4,7 @@ import json
 import logging
 import os
 import time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as WaitTimeout
 from collections.abc import Callable
 from pathlib import Path
 
@@ -107,7 +108,7 @@ def _generate_with_retry(provider, prompt, images, schema, tally: _Tally, sleep)
     for attempt in range(1, MAX_ATTEMPTS + 1):
         tally.calls += 1
         try:
-            resp = provider.generate(prompt, images, schema)
+            resp = _generate_with_heartbeat(provider, prompt, images, schema)
         except ProviderError as e:
             if not e.retryable or attempt == MAX_ATTEMPTS:
                 raise
@@ -116,6 +117,19 @@ def _generate_with_retry(provider, prompt, images, schema, tally: _Tally, sleep)
             continue
         tally.add(resp)
         return resp
+
+
+def _generate_with_heartbeat(provider, prompt, images, schema, every: float = 5.0) -> GenerateResponse:
+    """One model call can take minutes. Run it in a thread and log 'still waiting' from this thread,
+    so the UI shows the app is alive. (Streamlit only allows UI updates from the script's own thread.)"""
+    started = time.perf_counter()
+    with ThreadPoolExecutor(max_workers=1) as pool:
+        future = pool.submit(provider.generate, prompt, images, schema)
+        while True:
+            try:
+                return future.result(timeout=every)
+            except WaitTimeout:
+                log.info("  still waiting for the model... %ds", time.perf_counter() - started)
 
 
 def _parse(text: str, page_no: int) -> list[Block]:
