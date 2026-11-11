@@ -79,26 +79,35 @@ else:
     if failed != "none":
         st.error(f"{len(failed)} page(s) failed: {failed}. The other pages are shown below.")
     st.download_button("Download .md", result.markdown, file_name=f"{out['name']}.md", mime="text/markdown")
-    tab_result, tab_sources, tab_issues, tab_info = st.tabs(["Result", "Sources", "Issues", "Run info"])
-    with tab_result:
-        st.markdown(result.markdown)
-    with tab_sources:
-        rows = [{"page": b.page, "key": b.key, "region": b.region, "status": b.status, "excerpt": b.excerpt}
-                for r in result.results for b in r.blocks]
-        st.dataframe(rows, width="stretch")
-    with tab_issues:
-        issues = result.report.issues
-        rep = result.report
-        c1, c2, c3 = st.columns(3)
-        c1.metric("Page coverage", f"{rep.coverage:.0%}")
-        c2.metric("Grounded evidence", "n/a" if rep.grounded_rate is None else f"{rep.grounded_rate:.0%}")
-        c3.metric("Arithmetic checks", rep.checks_passed or "n/a")
-        if issues:
-            st.dataframe([i.model_dump() for i in issues], width="stretch")
-        else:
-            st.success("No validation issues.")
-    with tab_info:
-        st.json(result.run_info)
+    PANE = 750  # px; both panes scroll on their own so the document and the result stay side by side
+    col_doc, col_out = st.columns([2, 3])
+    with col_doc:
+        st.subheader("Document")
+        with st.container(height=PANE):
+            for page in result.pages:
+                st.image(page.image_png, caption=f"Page {page.page_no}")
+    with col_out:
+        tab_result, tab_sources, tab_issues, tab_info = st.tabs(["Result", "Sources", "Issues", "Run info"])
+        with tab_result:
+            with st.container(height=PANE):
+                st.markdown(result.markdown)
+        with tab_sources:
+            rows = [{"page": b.page, "key": b.key, "region": b.region, "status": b.status, "excerpt": b.excerpt}
+                    for r in result.results for b in r.blocks]
+            st.dataframe(rows, width="stretch", height=PANE)
+        with tab_issues:
+            issues = result.report.issues
+            rep = result.report
+            c1, c2, c3 = st.columns(3)
+            c1.metric("Page coverage", f"{rep.coverage:.0%}")
+            c2.metric("Grounded evidence", "n/a" if rep.grounded_rate is None else f"{rep.grounded_rate:.0%}")
+            c3.metric("Arithmetic checks", rep.checks_passed or "n/a")
+            if issues:
+                st.dataframe([i.model_dump() for i in issues], width="stretch")
+            else:
+                st.success("No validation issues.")
+        with tab_info:
+            st.json(result.run_info)
 
 if st.session_state.get("log"):
     with st.expander("Logs", expanded=out is None):

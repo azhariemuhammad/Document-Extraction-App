@@ -9,7 +9,7 @@ from pathlib import Path
 
 from core.extractor import extract_document
 from core.loaders import load_document
-from core.models import PageResult, ValidationReport
+from core.models import PageResult, PageUnit, ValidationReport
 from core.providers.base import ModelProvider
 from core.renderer import render_markdown
 from core.validator import validate
@@ -23,6 +23,7 @@ class RunOutput:
     report: ValidationReport
     run_info: dict
     markdown: str
+    pages: list[PageUnit]  # the UI shows these next to the result
 
 
 def run_pipeline(data: bytes, mime: str, instruction: str, provider: ModelProvider,
@@ -52,7 +53,7 @@ def run_pipeline(data: bytes, mime: str, instruction: str, provider: ModelProvid
     log.info("validation: coverage %s, %d issue(s); rendering Markdown", f"{report.coverage:.0%}", len(report.issues))
     markdown = render_markdown(results, report, run_info)
     log.info("done in %s", run_info["total time"])
-    return RunOutput(results, report, run_info, markdown)
+    return RunOutput(results, report, run_info, markdown, pages)
 
 
 def save_outputs(out: RunOutput, name: str) -> Path:
