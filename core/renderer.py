@@ -35,7 +35,8 @@ def _block(b: Block) -> list[str]:
     if b.type == "checkbox":
         mark = "x" if b.checked else " "
         flag = "" if b.status == "ok" else f" {MARKERS[b.status]}"
-        return [f"- [{mark}] {b.key or ''} {b.label or ''}{flag}".replace("  ", " "), f"  {_source(b)}"]
+        label = "" if b.label == b.key else b.label  # the model sometimes repeats the label as the key
+        return [f"- [{mark}] {b.key or ''} {label or ''}{flag}".replace("  ", " "), f"  {_source(b)}"]
 
     # table or chart
     title = ": ".join(x for x in (b.key, b.label) if x)
