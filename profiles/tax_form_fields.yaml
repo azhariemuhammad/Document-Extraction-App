@@ -1,0 +1,10 @@
+id: tax_form_fields
+name: "Tax form - all fields"
+instruction: |
+  Extract every form field and checkbox. Use the printed line number as `key` (e.g. "1", "8a").
+  Masked values such as "xxx" must have status "unreadable".
+checks:
+  - {target: "3",  expr: "1 - 2"}
+  - {target: "8c", expr: "8a + 8b"}
+  - {target: "9",  expr: "6 - 7 - 8c"}
+  - {target: "11", expr: "9 - 10c"}

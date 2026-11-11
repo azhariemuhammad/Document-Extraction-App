@@ -31,7 +31,7 @@ if run and upload:
         mime = upload.type or mimetypes.guess_type(upload.name)[0] or ""
         bar = st.progress(0.0, text="Starting...")
         result = run_pipeline(
-            upload.getvalue(), mime, instruction, get_provider(),
+            upload.getvalue(), mime, instruction, get_provider(), profiles[profile_id].checks,
             on_progress=lambda done, total: bar.progress(done / total, text=f"Page {done}/{total}"),
         )
         bar.empty()
@@ -59,6 +59,14 @@ else:
         st.dataframe(rows, width="stretch")
     with tab_issues:
         issues = result.report.issues
-        st.write([i.model_dump() for i in issues] if issues else "No validation yet (added in block 4).")
+        rep = result.report
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Page coverage", f"{rep.coverage:.0%}")
+        c2.metric("Grounded evidence", "n/a" if rep.grounded_rate is None else f"{rep.grounded_rate:.0%}")
+        c3.metric("Arithmetic checks", rep.checks_passed or "n/a")
+        if issues:
+            st.dataframe([i.model_dump() for i in issues], width="stretch")
+        else:
+            st.success("No validation issues.")
     with tab_info:
         st.json(result.run_info)

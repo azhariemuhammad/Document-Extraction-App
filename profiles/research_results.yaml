@@ -1,0 +1,7 @@
+id: research_results
+name: "Research paper - results only"
+instruction: |
+  Extract only the experimental results: study conditions, measured metrics, tables and charts.
+  Skip background, related work and references. Use a stable `key` such as "Table 2" or "Fig. 3".
+  For charts give title, axis labels, units and approximate bar values; keep significance markers such as "*p < 0.05".
+  If a table continues from or onto another page, say so in `note`.

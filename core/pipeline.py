@@ -11,6 +11,7 @@ from core.loaders import load_document
 from core.models import PageResult, ValidationReport
 from core.providers.base import ModelProvider
 from core.renderer import render_markdown
+from core.validator import validate
 
 
 @dataclass
@@ -22,11 +23,12 @@ class RunOutput:
 
 
 def run_pipeline(data: bytes, mime: str, instruction: str, provider: ModelProvider,
+                 checks: list[dict[str, str]] = [],
                  on_progress: Callable[[int, int], None] | None = None) -> RunOutput:
     started = time.perf_counter()
     pages = load_document(data, mime)
     results = extract_document(data, pages, provider, instruction, on_progress)
-    report = ValidationReport()  # filled in by the validator in block 4
+    report = validate(results, len(pages), {p.page_no: p.text_layer for p in pages}, checks)
 
     run_info = {
         "provider": provider.name,
@@ -36,6 +38,9 @@ def run_pipeline(data: bytes, mime: str, instruction: str, provider: ModelProvid
         "tokens (in/out)": f"{sum(r.input_tokens or 0 for r in results)} / {sum(r.output_tokens or 0 for r in results)}",
         "provider calls": sum(r.attempts for r in results if not r.cached),
         "cache hits": sum(r.cached for r in results),
+        "coverage": f"{report.coverage:.0%}",
+        "grounded evidence": "n/a" if report.grounded_rate is None else f"{report.grounded_rate:.0%}",
+        "arithmetic checks": report.checks_passed or "n/a",
         "failed pages": [r.page for r in results if r.error] or "none",
     }
     return RunOutput(results, report, run_info, render_markdown(results, report, run_info))

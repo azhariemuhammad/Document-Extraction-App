@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 path = Path(args.file)
 profile = load_profiles()[args.profile]
-out = run_pipeline(path.read_bytes(), mimetypes.guess_type(path.name)[0] or "", profile.instruction, get_provider(),
+out = run_pipeline(path.read_bytes(), mimetypes.guess_type(path.name)[0] or "", profile.instruction, get_provider(), profile.checks,
                    on_progress=lambda done, total: print(f"page {done}/{total}", flush=True))
 print(save_outputs(out, f"{path.stem}__{profile.id}"))
 print(out.run_info)

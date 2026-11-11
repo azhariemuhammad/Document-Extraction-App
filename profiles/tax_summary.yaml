@@ -1,0 +1,9 @@
+id: tax_summary
+name: "Tax form - summary"
+instruction: |
+  Extract only: net fiscal income, taxable income (PKP), tax due, underpayment or overpayment, and the filing date.
+  One `field` block each, with the printed line number as `key` where there is one.
+  Masked or illegible values must have status "unreadable".
+checks:
+  - {target: "3",  expr: "1 - 2"}
+  - {target: "9",  expr: "6 - 7 - 8c"}
