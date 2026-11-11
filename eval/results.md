@@ -4,9 +4,9 @@
 
 | Metric | Value |
 |---|---|
-| Gold items verified / pending | 31 / 1 |
+| Gold items verified / pending | 32 / 0 |
 | Field accuracy | 18/21 = 86% |
-| Checkbox accuracy | 2/10 = 20% |
+| Checkbox accuracy | 2/11 = 18% |
 | Table-cell accuracy | n/a (no verified items) |
 | Chart accuracy | n/a (no verified items) |
 | Page coverage (gold) | n/a (no verified items) |
@@ -23,7 +23,7 @@ Accuracy per gold kind:
 
 | Kind | Correct | Total |
 |---|---|---|
-| checkbox | 2 | 10 |
+| checkbox | 2 | 11 |
 | field | 18 | 21 |
 
 Failed items:
@@ -34,6 +34,7 @@ Failed items:
 | T05 | KLU | unreadable | not found |
 | T08 | DIAUDIT | False | not found |
 | T13 | 4a | False | not found |
+| T14 | 4b | False | not found |
 | T23 | 9a | True | not found |
 | T24 | 9b | False | not found |
 | T27 | 11a | False | not found |
@@ -42,19 +43,17 @@ Failed items:
 | T31 | 13a | False | not found |
 | T32 | 13b | False | not found |
 
-Pending owner check (excluded from scores): T14 4b (checkbox)
-
 ## research_paper_applied_ergonomics__full_document.json vs research_pdf.json (gold status: UNVERIFIED)
 
 | Metric | Value |
 |---|---|
-| Gold items verified / pending | 20 / 17 |
+| Gold items verified / pending | 26 / 11 |
 | Field accuracy | 0/3 = 0% |
 | Checkbox accuracy | n/a (no verified items) |
 | Table-cell accuracy | 8/17 = 47% |
-| Chart accuracy | n/a (no verified items) |
+| Chart accuracy | 0/6 = 0% |
 | Page coverage (gold) | n/a (no verified items) |
-| Chart value error (mean relative) | n/a (no verified items) |
+| Chart value error (mean relative) | n/a (all 6 chart values missing from the output) |
 | Grounded-evidence rate | 97% |
 | Page coverage | 100% |
 | Arithmetic checks passed | n/a |
@@ -67,6 +66,7 @@ Accuracy per gold kind:
 
 | Kind | Correct | Total |
 |---|---|---|
+| chart_value | 0 | 6 |
 | table_cell | 8 | 16 |
 | table_row | 0 | 1 |
 | text | 0 | 3 |
@@ -87,5 +87,11 @@ Failed items:
 | R11 | Table 3 | -.739* | not found |
 | R12 | Table 3 | .725* | not found |
 | R22 | Table 7 | F = 1.454 (p = 0.247) | not found |
+| R28 | Fig. 3 | 2 | not found |
+| R29 | Fig. 3 | 0 | not found |
+| R30 | Fig. 4 | 42.7 | not found |
+| R31 | Fig. 4 | 47.4 | not found |
+| R32 | Fig. 4 | 11.2 | not found |
+| R33 | Fig. 4 | 25.2 | not found |
 
-Pending owner check (excluded from scores): R21 Table 6 (table_cell), R23 Fig. 2 (chart_value), R24 Fig. 2 (chart_value), R25 Fig. 2 (chart_value), R26 Fig. 2 (chart_value), R27 Fig. 2 (chart_label), R28 Fig. 3 (chart_value), R29 Fig. 3 (chart_value), R30 Fig. 4 (chart_value), R31 Fig. 4 (chart_value), R32 Fig. 4 (chart_value), R33 Fig. 4 (chart_value), R34 Fig. 5 (chart_value), R35 Fig. 5 (chart_value), R36 Fig. 5 (chart_value), R37 Fig.* (status_all), R38 None (coverage)
+Pending owner check (excluded from scores): R21 Table 6 (table_cell), R23 Fig. 2 (chart_value), R24 Fig. 2 (chart_value), R25 Fig. 2 (chart_value), R26 Fig. 2 (chart_value), R27 Fig. 2 (chart_label), R34 Fig. 5 (chart_value), R35 Fig. 5 (chart_value), R36 Fig. 5 (chart_value), R37 Fig.* (status_all), R38 None (coverage)

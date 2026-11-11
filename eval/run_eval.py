@@ -230,8 +230,13 @@ def section(gold_path: Path, output: Path) -> str:
         hits, n = s["kinds"].get(kind, (0, 0))
         rows.append((label, f"{hits}/{n} = {hits / n:.0%}" if n else "n/a (no verified items)"))
     errs = s["chart_errors"]
-    rows.append(("Chart value error (mean relative)", f"{sum(errs) / len(errs):.1%} over {len(errs)} values, {s['chart_missing']} missing"
-                 if errs or s["chart_missing"] else "n/a (no verified items)"))
+    if errs:
+        chart = f"{sum(errs) / len(errs):.1%} over {len(errs)} values, {s['chart_missing']} missing"
+    elif s["chart_missing"]:
+        chart = f"n/a (all {s['chart_missing']} chart values missing from the output)"
+    else:
+        chart = "n/a (no verified items)"
+    rows.append(("Chart value error (mean relative)", chart))
     rows += [
         ("Grounded-evidence rate", fmt(val["grounded"], ".0%")),
         ("Page coverage", f"{val['coverage']:.0%}"),

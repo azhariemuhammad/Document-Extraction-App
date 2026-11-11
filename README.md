@@ -114,6 +114,9 @@ error once. It tests integration, **not extraction accuracy**.
   arithmetic checks passed; page coverage. Model confidence alone is not used.
 - **Operational:** latency per page, tokens, retries, failed pages.
 
+Chart gold items that could not be read with confidence are marked `verified: false`. The scorer lists them as
+pending and does not count them, so the chart value error is reported only over the items that were verified.
+
 ### Results
 
 **Pending.** The gold items have to be verified by hand against the sources before accuracy can be reported.
@@ -125,7 +128,11 @@ Paste the table from `eval/results.md` here once that is done. No numbers are cl
 - Tables spanning pages are extracted per page and not merged.
 - Grounding works only for PDFs. Images have no text layer, so they rely on the profile arithmetic checks.
 - The model sometimes returns a table title without cells; this is flagged as uncertain but not recovered automatically.
-- Chart values are visual estimates, labelled as such.
+- Chart values are visual estimates, labelled as such. Many charts show ranges (box plots, error bars), so there is no
+  single "true" value to read, and a hand-read gold value would itself be an estimate. The gold set therefore covers
+  chart values only where a bar is clearly readable, and the remaining chart items are left unverified and excluded
+  from the scores. Charts are otherwise judged on structure (title, axis labels, units, conditions, significance
+  markers, `estimated` status), not on exact numbers.
 - One live provider. A text-only provider needs the extractor change described above.
 - Speed and quota depend on the chosen model; some models spend minutes per page. The cache and the visible log help.
 - Accuracy is measured on two sample files only; other documents work through profiles/instructions but are unmeasured.
