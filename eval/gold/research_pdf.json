@@ -1,0 +1,9 @@
+{
+  "source": "research_paper_applied_ergonomics",
+  "status": "UNVERIFIED",
+  "_readme": "Owner hand-checks every item against the PDF. For table_cell and chart items add row (row label) and column (column header) and use field cell. Charts use numeric_tol.",
+  "items": [
+    {"key": "Table 2", "page": null, "kind": "table_cell", "field": "cell", "row": null, "column": null, "expected": null, "match": "numeric", "_todo": "pick a cell, fill page, row, column, expected"},
+    {"key": "Fig. 3", "page": null, "kind": "chart", "field": "cell", "row": null, "column": null, "expected": null, "match": "numeric_tol", "_todo": "pick a bar, fill page, row, column, expected"}
+  ]
+}

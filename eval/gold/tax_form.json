@@ -1,0 +1,9 @@
+{
+  "source": "tax_form_spt_1771",
+  "status": "UNVERIFIED",
+  "_readme": "Owner hand-checks every item against the image, then fills expected and sets status to VERIFIED. Items with expected null are skipped by the scorer. kind: field|checkbox|table_cell|chart. field: text|checked|cell. match: exact|numeric|numeric_tol|contains.",
+  "items": [
+    {"key": "9", "page": 1, "kind": "field", "field": "text", "expected": null, "match": "numeric", "_todo": "check line 9 (6-7-8c) on the image"},
+    {"key": "9.a", "page": 1, "kind": "checkbox", "field": "checked", "expected": null, "match": "exact", "_todo": "check whether box 9.a is ticked (true/false)"}
+  ]
+}
