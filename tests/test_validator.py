@@ -69,3 +69,10 @@ def test_unreadable_input_skips_check():
     f = lambda k, v, s="ok": block(key=k, text=v, excerpt=v, status=s)
     rep = validate([page([f("1", "Rp100"), f("2", "xxx", "unreadable"), f("3", "Rp60")])], 1, {}, CHECKS)
     assert rep.checks_passed == "0/1" and all(i.severity != "error" for i in rep.issues)
+
+
+def test_table_without_cells_is_flagged_not_ok():
+    t = block(type="table", key="Table 1", columns=None, rows=None)
+    rep = validate([page([t])], 1, {1: None})
+    assert t.status == "uncertain"
+    assert any("no data was extracted" in i.message for i in rep.issues)

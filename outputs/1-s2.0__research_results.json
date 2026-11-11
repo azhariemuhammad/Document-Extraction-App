@@ -1,0 +1,1433 @@
+{
+ "run_info": {
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "pages": 18,
+  "total time": "375.8s",
+  "tokens (in/out)": "130730 / 140145",
+  "provider calls": 19,
+  "cache hits": 0,
+  "coverage": "94%",
+  "grounded evidence": "96%",
+  "arithmetic checks": "n/a",
+  "failed pages": [
+   4
+  ]
+ },
+ "results": [
+  {
+   "page": 1,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": "experimental_results",
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 1,
+     "region": null,
+     "excerpt": "The results show that different information modes have distinct impacts compared to paper-based maintenance, in particular, 3D animation led to a 14% improvement over the video instructions in task completion time. Moreover, insights from eye gaze behaviours such as number of fixations and transition between Areas of Interest (AOIs) revealed the differences in attention switching and task comprehension difficulty with the choice of AR modalities.",
+     "note": "The text summarizes experimental findings regarding information modes (video vs 3D animation) and eye gaze metrics (fixations, transitions) on task completion time and attention switching."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 3921,
+   "input_tokens": 2804,
+   "output_tokens": 162,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 2,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 2,
+     "region": null,
+     "excerpt": "In addition, this study also recorded and analysed eye gaze behaviours and user perception to capture possible factors that contribute to a variation in performance and user safety, aspects that are rarely considered in the evaluation of AR usability in manufacturing and maintenance application.",
+     "note": "This describes the experimental metrics used in the study."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 2954,
+   "input_tokens": 3613,
+   "output_tokens": 94,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 3,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "Kim et al. (2019) studied the effect of different HMD types (i.e. monocular vs. binocular), information mode (i.e. text vs. graphic), and information availability (i.e. always-on vs. on-demand) on a simulated warehouse job involving order picking and part assembly. They discovered that job performance and workload were more affected by the user interface design rather than by HMD type. They reported that using HMD with graphic-based instruction and always-on mode instruction led to improved job performance and reduced perceived workload compared to a paper pick list condition.",
+     "note": "Experimental results for Kim et al. (2019)"
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "There was a statistically significant main effect of background and text styles on user’s response time, but this did not affect error rates. The effect of the background on the legibility could be attributed to different luminance profiles of the background. The background that had neutral luminance improved the legibility. Meanwhile, the use of text billboards improved legibility on real industrial background and supports the need for a mandatory industry colour.",
+     "note": "Experimental results for Gattullo et al. (2015)"
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "Tested under a text-based visual search, context switching had a negative impact on performance when information was presented at the far distance (6 m), but not when it was presented at either the near (0.7 m) and medium (2 m) distances. Moreover, context switching between AR and real-world visual information resulted in significantly higher levels of eye fatigue at all distances.",
+     "note": "Experimental results for Gabbard et al. (2019)"
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "In the brightest lighting condition, about 4000 lux, user performance with optical HMD dropped significantly, and hence, video HMD might be more suitable for higher lighting setting.",
+     "note": "Experimental results for lighting conditions"
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "Their study found a significant effect of focal distance switching on task performance. Participants completed more sub-tasks and were more accurate when focal distance switching was not required.",
+     "note": "Experimental results for Gabbard et al. (2019) regarding focal distance"
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "Using monocular HMD, the impact of information display position (i. e. peripheral vs. central) for preventive car maintenance was assessed (Zheng et al., 2015). Their user-based study found that the display position of task instructions had a significant effect on task performance; with a peripheral display yielding a longer completion time than a central display.",
+     "note": "Experimental results for Zheng et al. (2015)"
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "In a different study, the level of information requirement was also studied on a Computer Numerical Control (CNC) machine repair task using a HMD (Zhu et al., 2013). They found that the appropriate level of detail of AR instructions could help the expert users to complete the task more quickly than the unregulated detail of AR information.",
+     "note": "Experimental results for Zhu et al. (2013)"
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 3,
+     "region": null,
+     "excerpt": "The study found that tasks with a lower difficulty of OA and PA might not show significant benefits of using an AR system over the traditional method, whereas the increasing complexity of OA and PA would result in greater performance gain of an AR solution over a traditional approach.",
+     "note": "Experimental results for Fernández del Amo et al. (2020)"
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 11198,
+   "input_tokens": 3549,
+   "output_tokens": 933,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 4,
+   "blocks": [],
+   "error": "Model returned unusable output after a repair attempt: Unterminated string starting at: line 7 column 13 (char 173)",
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 253977,
+   "input_tokens": 72234,
+   "output_tokens": 131042,
+   "cached": false,
+   "attempts": 2
+  },
+  {
+   "page": 5,
+   "blocks": [
+    {
+     "type": "table",
+     "key": "Table 1",
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 5,
+     "region": null,
+     "excerpt": "Table 1 (continued)\nAuthors and Task | Attributes | Performance measures | Usability and safety-related issues\nZhu et al. (2013) -Assembly and disassembly | LOD | CT: (S N/A) L (H) H (L) | - With the same expertise level, a group of participants that was presented with sufficient level of detail of AR information completed task faster compared to the other group with more detail of AR information. - Participants rated the adjustable level of AR information detail for completing the task more satisfying, intuitive, and easy to use compared to the non-adjustable detail of AR information\nGattullo et al. (2015) -Reading the graphical instruction | Text styles | RT = S B (H) E = NS | - There was a statistically significant effect of background and text style on user’s response time but did not affect error rates - The use of billboard improved legibility on real industrial background and supported mandatory industry colour.\n| Backgrounds | RT = S E (H) E = NS | - The effect of background on the legibility could be attributable to different luminance profile of the background - The background that has neutral luminance improved the legibility\n| Billboard style | RT = (S N/A) E = (S N/A) | - White text on the mandatory billboard colour (e.g. red) produced shorter response time - It is important for the billboard to have a contrast between colour and text\n| Outline thickness | RT = (S N/A) E = (S N/A) | - Adding outline improved the readability of the text for video-see through display whereas increasing the width of the outline did not improve the performance - The use of plain black text in video see-through contrasts well with most backgrounds without the need for any outline\n| HMD types | RT = (S N/A) E = (S N/A) | - When colour semantics are not important, it is recommended to use white text on blue billboard for both optical and video HMD - Background illuminance strongly affects optical display but hardly affects video display - Both types of HMD support similar performance at higher lighting levels, about 1000 lux. In the brightest lighting condition, about 4000 lux, user performance with optical display dropped significantly. - The main disadvantage for the optical display concerns brightness and contrast limitations, whereas the major drawback of the video display is the real-time perception of the real world\nGabbard et al. (2019) Text-based visual search | Context switching | TC: S RR(H) RA (L) E: S RR(H) RA (L) | - Context switching had a negative impact on performance when information was presented at the far distance, but not at the near and medium distances. - Context switching between AR and real-world visual information resulted in significantly higher levels of eye fatigue at all distances\n| Focal distance switching | TC: S NR (H) R (L) E: S NR (H) R (L) | - Participants completed more subtasks, and were more accurate, when focal distance switching was not required. - This will minimize changing accommodation and convergence, and therefore, put the least amount of strain on the eye’s oculomotor mechanism\n| Matched (M) vs. mismatched (mM) | TC: S M (L) mM(H) E: S M (L) mM(H) | - When the distance to real world text, distance to virtual text, and focal depth matched, participants performed better than when the distances did not match.\nMarkov-Vetter et al. (2020) Detecting | Type of guidance | CT: S A(H) M+ (L) M (H) E: S | - Arrow type guidance led to a faster target detection (even with a secondary task), lower",
+     "note": "Table continues from previous page and onto next page."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 3765,
+   "input_tokens": 3013,
+   "output_tokens": 873,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 6,
+   "blocks": [
+    {
+     "type": "table",
+     "key": "Table 1 (continued)",
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 6,
+     "region": null,
+     "excerpt": "Table 1 (continued)\nAuthors and Task Attributes Performance measures Usability and safety-related issues\noff-screen target - Arrow (A) A (L) M+ (H) M (H) workload with higher accuracy compared to other conditions.\nWang et al. (2019) Disassembly task Instruction modes CT: S M(L) A(L) V (H) E: S M (H) A (L) V (H) - AR method (i.e. animation) had the best task performance in reducing the errors\n- Manual (M) - Female participants suffered higher level of visual fatigue, subjective mental workload, and perceived lower system usability when using google glasses-based AR than males\n- 3D animation (A)\n- Video (V)\nCT: Completion Time, RT: Reaction Time, E: Error, H: High, L: Low, S: Significant at p < 0.05, NS: Not significant.",
+     "note": "Table continues from previous page(s). The table structure is complex and contains merged cells and nested lists; row data is represented as best as possible in a flat format."
+    },
+    {
+     "type": "table",
+     "key": "Table 2",
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 6,
+     "region": null,
+     "excerpt": "Table 2\nThe distribution of resources allocation according to MRM in different maintenance conditions.\nConditions Input modality Processing stage Processing code Responses\nCG Visual Searching (visual/cognitive, responding) Verbal Manual\nCG Visual Processing (visual/cognitive) Verbal –\nCG Visual Locating (visual/cognitive) Spatial –\nCG Visual Working (responding) Spatial Manual\nCG Visual Transitioning (visual/cognitive, responding) Spatial Manual\nVH Visual Processing (visual/cognitive) Verbal, Spatial –\nVH Visual Locating (visual/cognitive) Spatial –\nVH Visual Working (responding) Spatial Manual\nVH Visual Transitioning (responding) Spatial Manual\nAH Visual Processing (visual/cognitive) Verbal, Spatial –\nAH Visual Working (responding) Spatial Manual\nAH Visual Transitioning (responding) Spatial Manual\nVV Visual Processing (visual/cognitive) Verbal, Spatial –\nVV Visual Locating (visual/cognitive) Spatial –\nVV Visual Working (responding) Spatial Manual\nVV – Transitioning (responding) Verbal Vocal\nAV Visual Processing (visual/cognitive) Verbal, Spatial –\nAV Visual Working (responding) Spatial Manual\nAV – Transitioning (responding) Verbal Vocal",
+     "note": "Table continues onto next page(s)."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 6,
+     "region": null,
+     "excerpt": "Performance indexes were used to measure how effective the task completed in each condition. The quality of performance was assessed in terms of completion time and the number of errors. The completion time was measured (using a stopwatch) from when the participant started to when they finished the maintenance task. Errors were recorded when the participant misinterpreted the given instructions, which were coded in five categories for ease of data collection including: 0-no error, 1-wrong tool, 2-wrong tool movement, 3-wrong tool orientation, 4-wrong part orientation, 5-other error.",
+     "note": "Measured metrics description."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 6,
+     "region": null,
+     "excerpt": "NASA-TLX (Hart and Staveland, 1988), which consists of six workload components (Mental, Physical, Temporal, Performance, Effort, and Frustration), was used to measure the subjective perception of workload. The self-rating score ranges from 0 to 100 and a raw score was computed.",
+     "note": "Measured metrics description."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 10026,
+   "input_tokens": 3355,
+   "output_tokens": 864,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 7,
+   "blocks": [
+    {
+     "type": "table",
+     "key": "Table 3",
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 7,
+     "region": null,
+     "excerpt": "Table 3 Demographic data and correlation to task performance. Condition N Gender Age (yrs) M exp.(number/5 yrs) AR exp (number/5 yrs) CT - Age CT – Mexp. CT - ARexp Error - Age Error - Mexp. Error - ARexp CG 10 M = 7; F = 3 26.6 (4.55) 219.5 (437.05) 3.6 (9.33) −0.48 0.01 −0.18 −0.22 0.09 0.49 VH 11 M = 9; F = 2 26 (3.77) 11.45 (16) 4.72 (15.02) 0.37 −0.07 −0.42 .602* .725* −0.41 AH 10 M = 9; F = 1 25.2 (3.93) 11.6 (16.43) 3.9 (5.95) 0.60 −0.01 −0.08 −0.36 −0.41 −0.06 VV 10 M = 9; F = 1 27.5 (4.69) 32.5 (50.62) 2.2 (6.28) −0.46 −0.36 0.07 −0.36 −0.11 0.49 AV 10 M = 9; F = 1 26 (4.47) 28.3 (39.08) 0.7 (1.15) −.739* −.779** 0.35 – – – M exp: maintenance experience, AR exp: exposure to AR, CT: completion time, *p < 0.05, **p < 0.01.",
+     "note": null
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 3323,
+   "input_tokens": 3694,
+   "output_tokens": 509,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 8,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "uncertain",
+     "page": 8,
+     "region": null,
+     "excerpt": "There were two main conditions in which this experiment was carried out. Firstly, one group of participants was asked to perform the maintenance task using a paper-based manual. ... This group served as a control group (CG). Secondly, some other groups of participants were given the AR system ... For the AR-based maintenance system, there were four groups with a combination of information mode and input modality such as video-hand gesture (VH), video-voice command (VV), animation-hand gesture (AH), and animation-voice command (AV).",
+     "note": "Describes the experimental conditions: CG, VH, VV, AH, AV."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 8,
+     "region": null,
+     "excerpt": "Based on the number of resource allocation, participants will perform the best in the AV condition, and the least performance improvement over paper-based manual will be in the VH condition.",
+     "note": "Summary of performance results based on resource allocation."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 27645,
+   "input_tokens": 2889,
+   "output_tokens": 240,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 9,
+   "blocks": [
+    {
+     "type": "heading",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 9,
+     "region": null,
+     "excerpt": "5. Results",
+     "note": null
+    },
+    {
+     "type": "heading",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 9,
+     "region": null,
+     "excerpt": "5.1. Task performance",
+     "note": null
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 9,
+     "region": null,
+     "excerpt": "The average completion time for 3D animation users was 501.1 s (SD = 83.60 s), and 583.1 s (SD = 93.73 s) for video users.",
+     "note": null
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 9,
+     "region": null,
+     "excerpt": "In the same way, main effect of information mode (U = 129, p = 0.005) was also found for number of errors as indicated by mean rank (16.95 and 25.64 for 3D animation and video, respectively)",
+     "note": null
+    },
+    {
+     "type": "heading",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 9,
+     "region": null,
+     "excerpt": "5.2. Subjective workload",
+     "note": null
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 9,
+     "region": null,
+     "excerpt": "The statistical analysis of workload measures revealed that there was a statistically significant difference in subjective workload distribution between AR and control group conditions as assessed by NASA-TLX measure in Mental (χ2 = 9.96, p = 0.041) and Temporal workload (χ2 = 10.40, p = 0.034), but not in Physical (χ2 = 7.11, p = 0.13), Effort (χ2 = 5.75, p = 0.218), Performance (χ2 = 1.97, p = 0.741), Frustration (χ2 = 7.49, p = 0.112) and total workload component. (χ2 = 8.16, p = 0.086).",
+     "note": null
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 4027,
+   "input_tokens": 3706,
+   "output_tokens": 524,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 10,
+   "blocks": [
+    {
+     "type": "chart",
+     "key": "Fig. 2",
+     "label": "TIME COMPLETION",
+     "text": "Task completion time for different maintenance conditions. For an outlier in the data (23), log transformation was applied. *p < 0.05.",
+     "columns": [
+      "Condition",
+      "Time (seconds)"
+     ],
+     "rows": [
+      [
+       "Control",
+       "~950"
+      ],
+      [
+       "VH",
+       "~650"
+      ],
+      [
+       "AH",
+       "~550"
+      ],
+      [
+       "VV",
+       "~650"
+      ],
+      [
+       "AV",
+       "~550"
+      ]
+     ],
+     "unit": "seconds",
+     "checked": null,
+     "status": "estimated",
+     "page": 10,
+     "region": "Fig. 2",
+     "excerpt": "Fig. 2. Task completion time for different maintenance conditions. For an outlier in the data (23), log transformation was applied. *p < 0.05.",
+     "note": null
+    },
+    {
+     "type": "table",
+     "key": "Table 4",
+     "label": "Percentage improvement over paper-based maintenance.",
+     "text": null,
+     "columns": [
+      "Maintenance Condition",
+      "Improvement over control group",
+      "Improvement Variability"
+     ],
+     "rows": [
+      [
+       "VH",
+       "31.8",
+       "71.8"
+      ],
+      [
+       "AH",
+       "42.7",
+       "75.1"
+      ],
+      [
+       "VV",
+       "35.1",
+       "63.9"
+      ],
+      [
+       "AV",
+       "43.1",
+       "68.3"
+      ]
+     ],
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 10,
+     "region": "Table 4",
+     "excerpt": "Table 4 Percentage improvement over paper-based maintenance.",
+     "note": null
+    },
+    {
+     "type": "chart",
+     "key": "Fig. 3",
+     "label": "NUMBER OF ERRORS",
+     "text": "Number of errors for different maintenance conditions. *p < 0.05.",
+     "columns": [
+      "Condition",
+      "Unit Count"
+     ],
+     "rows": [
+      [
+       "Control",
+       "~2.5"
+      ],
+      [
+       "VH",
+       "~1.0"
+      ],
+      [
+       "AH",
+       "~1.0"
+      ],
+      [
+       "VV",
+       "~1.0"
+      ],
+      [
+       "AV",
+       "~0.2"
+      ]
+     ],
+     "unit": "unit count",
+     "checked": null,
+     "status": "estimated",
+     "page": 10,
+     "region": "Fig. 3",
+     "excerpt": "Fig. 3. Number of errors for different maintenance conditions. *p < 0.05.",
+     "note": null
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 3188,
+   "input_tokens": 2416,
+   "output_tokens": 603,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 11,
+   "blocks": [
+    {
+     "type": "chart",
+     "key": "Fig. 4",
+     "label": "Distribution of perceived workload across conditions.",
+     "text": "NASA-TLX",
+     "columns": [
+      "Condition",
+      "Mental",
+      "Physical",
+      "Temporal",
+      "Performance",
+      "Effort",
+      "Frustration",
+      "Total"
+     ],
+     "rows": [
+      [
+       "CG",
+       "~28",
+       "~20",
+       "~22",
+       "~26",
+       "~21",
+       "~19",
+       "~34"
+      ],
+      [
+       "VH",
+       "~38",
+       "~28",
+       "~39",
+       "~26",
+       "~33",
+       "~19",
+       "~34"
+      ],
+      [
+       "AH",
+       "~27",
+       "~20",
+       "~22",
+       "~26",
+       "~21",
+       "~19",
+       "~25"
+      ],
+      [
+       "VV",
+       "~38",
+       "~38",
+       "~39",
+       "~26",
+       "~21",
+       "~19",
+       "~25"
+      ],
+      [
+       "AV",
+       "~32",
+       "~38",
+       "~23",
+       "~26",
+       "~21",
+       "~19",
+       "~25"
+      ]
+     ],
+     "unit": "Score",
+     "checked": null,
+     "status": "estimated",
+     "page": 11,
+     "region": "Fig. 4",
+     "excerpt": "Fig. 4. Distribution of perceived workload across conditions.",
+     "note": null
+    },
+    {
+     "type": "table",
+     "key": "Table 5",
+     "label": "Physiological response across conditions.",
+     "text": null,
+     "columns": [
+      "Conditions",
+      "SCL T",
+      "SCL B",
+      "SCL D",
+      "SCR T",
+      "SCR B",
+      "SCR D",
+      "RMSSD T",
+      "RMSSD B",
+      "RMSSD D",
+      "HR T",
+      "HR B",
+      "HR D"
+     ],
+     "rows": [
+      [
+       "AH",
+       "0.57 (0.32)",
+       "-0.92 (0.38)",
+       "1.49 (0.62)",
+       "0.46 (0.20)",
+       "-0.60 (0.20)",
+       "1.06 (0.34)",
+       "0.33 (0.49)",
+       "0.22 (0.66)",
+       "0.11 (0.92)",
+       "0.80 (0.34)",
+       "-0.93 (0.32)",
+       "1.73 (0.55)"
+      ],
+      [
+       "AV",
+       "0.46 (0.40)",
+       "-0.75 (0.61)",
+       "1.22 (0.94)",
+       "0.35 (0.38)",
+       "-0.48 (0.38)",
+       "0.83 (0.59)",
+       "0.49 (0.69)",
+       "0.46 (0.56)",
+       "0.16 (0.54)",
+       "0.63 (0.45)",
+       "-0.94 (0.29)",
+       "1.57 (0.70)"
+      ],
+      [
+       "VH",
+       "0.39 (0.46)",
+       "-0.32 (0.66)",
+       "0.71 (1.03)",
+       "0.43 (0.29)",
+       "-0.57 (0.29)",
+       "1.01 (0.45)",
+       "0.21 (0.68)",
+       "0.15 (0.20)",
+       "0.06 (0.70)",
+       "0.65 (0.29)",
+       "-0.59 (0.40)",
+       "1.24 (0.64)"
+      ],
+      [
+       "VV",
+       "0.65 (0.36)",
+       "-0.89 (0.65)",
+       "1.54 (0.84)",
+       "0.38 (0.84)",
+       "-0.44 (0.18)",
+       "0.82 (0.41)",
+       "0.46 (0.66)",
+       "0.48 (0.30)",
+       "-0.18 (0.42)",
+       "0.51 (0.54)",
+       "-0.72 (0.60)",
+       "1.23 (1.05)"
+      ],
+      [
+       "CG",
+       "0.36 (0.22)",
+       "-0.69 (0.45)",
+       "1.08 (0.53)",
+       "0.29 (0.53)",
+       "-0.60 (0.27)",
+       "0.92 (0.55)",
+       "0.67 (0.58)",
+       "1.02 (0.87)",
+       "-0.49 (0.69)",
+       "0.15 (0.29)",
+       "-0.54 (0.54)",
+       "0.70 (0.77)"
+      ]
+     ],
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 11,
+     "region": "Table 5",
+     "excerpt": "Table 5 Physiological response across conditions.",
+     "note": null
+    },
+    {
+     "type": "table",
+     "key": "Table 6",
+     "label": "Eye-tracking data availability in each AR condition.",
+     "text": null,
+     "columns": [
+      "AR conditions",
+      "Total samples",
+      "Data availability",
+      "Analysis of variance"
+     ],
+     "rows": [
+      [
+       "VH",
+       "11",
+       "6",
+       "YES"
+      ],
+      [
+       "VV",
+       "10",
+       "4",
+       "Insufficient residual for degree of freedom"
+      ],
+      [
+       "AH",
+       "10",
+       "9",
+       "YES"
+      ],
+      [
+       "AV",
+       "10",
+       "10",
+       "YES"
+      ]
+     ],
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 11,
+     "region": "Table 6",
+     "excerpt": "Table 6 Eye-tracking data availability in each AR condition.",
+     "note": null
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 5708,
+   "input_tokens": 3397,
+   "output_tokens": 1722,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 12,
+   "blocks": [
+    {
+     "type": "chart",
+     "key": "Fig. 5a",
+     "label": "TOTAL DWELL TIME",
+     "text": "Dwell time for VH and VV conditions across AOIs (M, S, To, V, Gb)",
+     "columns": [
+      "AOI",
+      "VH",
+      "VV"
+     ],
+     "rows": [
+      [
+       "M",
+       "~50",
+       "~50"
+      ],
+      [
+       "S",
+       "~20",
+       "~20"
+      ],
+      [
+       "To",
+       "~20",
+       "~20"
+      ],
+      [
+       "V",
+       "~120",
+       "~170"
+      ],
+      [
+       "Gb",
+       "~180",
+       "~120"
+      ]
+     ],
+     "unit": "SECOND",
+     "checked": null,
+     "status": "estimated",
+     "page": 12,
+     "region": "Fig. 5",
+     "excerpt": "Fig. 5. Eye gaze behaviours of Video-Hand gesture (VH) and Video-Voice command (VV): a) Dwell time",
+     "note": null
+    },
+    {
+     "type": "chart",
+     "key": "Fig. 5b",
+     "label": "NUMBER OF FIXATIONS",
+     "text": "Number of fixations for VH and VV conditions across AOIs (M, S, To, V, Gb)",
+     "columns": [
+      "AOI",
+      "VH",
+      "VV"
+     ],
+     "rows": [
+      [
+       "M",
+       "~20",
+       "~20"
+      ],
+      [
+       "S",
+       "~25",
+       "~25"
+      ],
+      [
+       "To",
+       "~20",
+       "~20"
+      ],
+      [
+       "V",
+       "~90",
+       "~85"
+      ],
+      [
+       "Gb",
+       "~70",
+       "~50"
+      ]
+     ],
+     "unit": "UNIT COUNT",
+     "checked": null,
+     "status": "estimated",
+     "page": 12,
+     "region": "Fig. 5",
+     "excerpt": "Fig. 5. Eye gaze behaviours of Video-Hand gesture (VH) and Video-Voice command (VV): b) Number of Fixations",
+     "note": null
+    },
+    {
+     "type": "chart",
+     "key": "Fig. 5c",
+     "label": "TRANSITION BETWEEN AOI",
+     "text": "Transition counts between AOIs for VH and VV conditions",
+     "columns": [
+      "Transition",
+      "VH",
+      "VV"
+     ],
+     "rows": [
+      [
+       "M-M",
+       "~1",
+       "~1"
+      ],
+      [
+       "S-S",
+       "~1",
+       "~1"
+      ],
+      [
+       "TO-TO",
+       "~1",
+       "~1"
+      ],
+      [
+       "V-V",
+       "~50",
+       "~45"
+      ],
+      [
+       "GB-GB",
+       "~50",
+       "~45"
+      ],
+      [
+       "V-TO",
+       "~25",
+       "~25"
+      ],
+      [
+       "V-S",
+       "~25",
+       "~25"
+      ],
+      [
+       "TO-S",
+       "~15",
+       "~15"
+      ],
+      [
+       "V-M",
+       "~1",
+       "~1"
+      ],
+      [
+       "M-S",
+       "~2",
+       "~2"
+      ],
+      [
+       "TO-M",
+       "~2",
+       "~2"
+      ],
+      [
+       "V-GB",
+       "~28",
+       "~18"
+      ],
+      [
+       "GB-S",
+       "~1",
+       "~1"
+      ],
+      [
+       "GB-TO",
+       "~1",
+       "~1"
+      ],
+      [
+       "GB-M",
+       "~1",
+       "~1"
+      ]
+     ],
+     "unit": "NUMBER OF TRANSITION",
+     "checked": null,
+     "status": "estimated",
+     "page": 12,
+     "region": "Fig. 5",
+     "excerpt": "Fig. 5. Eye gaze behaviours of Video-Hand gesture (VH) and Video-Voice command (VV): c) transition between AOIs or fixations.",
+     "note": null
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 14089,
+   "input_tokens": 2870,
+   "output_tokens": 826,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 13,
+   "blocks": [
+    {
+     "type": "chart",
+     "key": "Fig. 6a",
+     "label": "TOTAL DWELL TIME",
+     "text": "Dwell time for conditions M, S, To, Gb for AH and AV",
+     "columns": [
+      "Condition",
+      "AH",
+      "AV"
+     ],
+     "rows": [
+      [
+       "M",
+       "~80",
+       "~70"
+      ],
+      [
+       "S",
+       "~80",
+       "~80"
+      ],
+      [
+       "To",
+       "~60",
+       "~60"
+      ],
+      [
+       "Gb",
+       "~300",
+       "~250"
+      ]
+     ],
+     "unit": "SECOND",
+     "checked": null,
+     "status": "estimated",
+     "page": 13,
+     "region": "Fig. 6",
+     "excerpt": "TOTAL DWELL TIME",
+     "note": null
+    },
+    {
+     "type": "chart",
+     "key": "Fig. 6b",
+     "label": "NUMBER OF FIXATIONS",
+     "text": "Number of fixations for conditions M, S, To, Gb for AH and AV",
+     "columns": [
+      "Condition",
+      "AH",
+      "AV"
+     ],
+     "rows": [
+      [
+       "M",
+       "~10",
+       "~10"
+      ],
+      [
+       "S",
+       "~45",
+       "~40"
+      ],
+      [
+       "To",
+       "~25",
+       "~20"
+      ],
+      [
+       "Gb",
+       "~100",
+       "~105"
+      ]
+     ],
+     "unit": "UNIT COUNT",
+     "checked": null,
+     "status": "estimated",
+     "page": 13,
+     "region": "Fig. 6",
+     "excerpt": "NUMBER OF FIXATIONS",
+     "note": null
+    },
+    {
+     "type": "chart",
+     "key": "Fig. 6c",
+     "label": "TRANSITION BETWEEN AOI",
+     "text": "Transition between AOIs for conditions M-M, S-S, TO-TO, GB-GB, TO-S, M-S, TO-M, GB-S, GB-TO, GB-M for AH and AV",
+     "columns": [
+      "Condition",
+      "AH",
+      "AV"
+     ],
+     "rows": [
+      [
+       "M-M",
+       "~5",
+       "~5"
+      ],
+      [
+       "S-S",
+       "~20",
+       "~15"
+      ],
+      [
+       "TO-TO",
+       "~5",
+       "~5"
+      ],
+      [
+       "GB-GB",
+       "~80",
+       "~95"
+      ],
+      [
+       "TO-S",
+       "~30",
+       "~25"
+      ],
+      [
+       "M-S",
+       "~10",
+       "~5"
+      ],
+      [
+       "TO-M",
+       "~5",
+       "~5"
+      ],
+      [
+       "GB-S",
+       "~15",
+       "~15"
+      ],
+      [
+       "GB-TO",
+       "~10",
+       "~10"
+      ],
+      [
+       "GB-M",
+       "~5",
+       "~5"
+      ]
+     ],
+     "unit": "NUMBER OF TRANSITION",
+     "checked": null,
+     "status": "estimated",
+     "page": 13,
+     "region": "Fig. 6",
+     "excerpt": "TRANSITION BETWEEN AOI",
+     "note": null
+    },
+    {
+     "type": "table",
+     "key": "Table 7",
+     "label": "Two-way MANOVA analysis.",
+     "text": null,
+     "columns": [
+      "Source",
+      "IM",
+      "II",
+      "IM X II"
+     ],
+     "rows": [
+      [
+       "TWO-WAY MANOVA (System usefulness & Interface Quality)",
+       "F = 1.454 (p = 0.247) Wilks’ Λ = .925",
+       "F = 1.652 (p = 0.206) Wilks’ Λ = .916",
+       "F = 1.201 (p = 0.313) Wilks’ Λ = .937"
+      ]
+     ],
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 13,
+     "region": "Table 7",
+     "excerpt": "Table 7 Two-way MANOVA analysis.",
+     "note": null
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 4380,
+   "input_tokens": 2555,
+   "output_tokens": 892,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 14,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 14,
+     "region": null,
+     "excerpt": "The findings show that although all AR conditions significantly improved task performance in terms of completion time over a traditional paper-based manual, the 3D animation-based instruction show a significantly faster completion time (14%) compared to a video-based visualisation.",
+     "note": "Experimental result comparing 3D animation-based instruction to video-based visualisation."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 11018,
+   "input_tokens": 3567,
+   "output_tokens": 106,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 15,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 15,
+     "region": null,
+     "excerpt": "this study also found that the number of task errors was significantly reduced when using AR compared to paper-based manuals but only for the 3D animation-based visualisation. It was also found that participants who used video-based instructions made significantly more mistakes than those who experienced 3D animation-based instructions.",
+     "note": "Experimental results regarding task errors and visualization modes."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 15,
+     "region": null,
+     "excerpt": "In particular, all AR conditions elicited a higher level of HR compared to a paper-based manual (Table 5) with the significant result observed only between the paper-based manual group and the Animation-Hand (AH) group.",
+     "note": "Experimental results regarding physiological arousal (HR)."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 15,
+     "region": null,
+     "excerpt": "The results show that the amount of time users spent looking at the video and gearbox was equivalent to the total time spent looking at the animation and gearbox. Nonetheless, the total number of fixations was significantly greater in the sum of the video and gearbox than in animation and gearbox.",
+     "note": "Experimental results regarding eye movement and visual effort."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 15,
+     "region": null,
+     "excerpt": "Besides, the Fixation Rate indicated a significant higher ratio of video than animation, which may imply higher complexity in information decoding.",
+     "note": "Experimental results regarding fixation rate."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 3437,
+   "input_tokens": 3419,
+   "output_tokens": 364,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 16,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 16,
+     "region": null,
+     "excerpt": "Although the number of errors were not marked by any association with the eye tracking metrics used in this study, there are some evidences that eye tracking metrics (e.g. number of fixations) could discriminate different user strategies to interact with different information modes, and their impacts on the task performance.",
+     "note": "Experimental result regarding eye tracking metrics and task performance."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 16,
+     "region": null,
+     "excerpt": "Perceived usability was not statistically significantly different across AR modalities.",
+     "note": "Experimental result regarding perceived usability."
+    },
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 16,
+     "region": null,
+     "excerpt": "In terms of interface quality, participants found both interaction modes effective and easy to use. Nonetheless, participants found that voice commands could help them concentrate on the task better and complete the task quicker if both their hands are busy. The use of hand-gesture may be tiring due to the need to raise and to lower the hand when interacting with interface. With regards to the hardware, participants found that the Hololens 2 was comfortable and not too heavy for the task duration tested.",
+     "note": "Experimental results regarding interface quality and hardware comfort."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 5099,
+   "input_tokens": 3351,
+   "output_tokens": 300,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 17,
+   "blocks": [
+    {
+     "type": "paragraph",
+     "key": null,
+     "label": null,
+     "text": null,
+     "columns": null,
+     "rows": null,
+     "unit": null,
+     "checked": null,
+     "status": "ok",
+     "page": 17,
+     "region": null,
+     "excerpt": "The findings show that 3D animation could help to achieve faster task completion times and fewer errors in guiding task assembly compared to video-based instructions.",
+     "note": "This summarizes experimental results regarding task completion times and error rates comparing 3D animation and video-based instructions."
+    }
+   ],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 3234,
+   "input_tokens": 4708,
+   "output_tokens": 90,
+   "cached": false,
+   "attempts": 1
+  },
+  {
+   "page": 18,
+   "blocks": [],
+   "error": null,
+   "model": "gemini-3.1-flash-lite",
+   "latency_ms": 2556,
+   "input_tokens": 5590,
+   "output_tokens": 1,
+   "cached": false,
+   "attempts": 1
+  }
+ ]
+}

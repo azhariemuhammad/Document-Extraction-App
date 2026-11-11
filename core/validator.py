@@ -55,6 +55,13 @@ def validate(results: list[PageResult], expected_pages: int, text_layers: dict[i
                     _downgrade(b)
                     issues.append(Issue(severity="warning", page=b.page, key=b.key,
                                         message="Excerpt not found in the page text layer; marked uncertain."))
+            if b.type in ("table", "chart") and not (b.columns and b.rows):
+                # the model named the table but gave no cells; "ok" would hide the data loss
+                if b.status == "ok":
+                    b.status = "uncertain"
+                    b.note = b.note or "no table data was extracted"
+                issues.append(Issue(severity="warning", page=b.page, key=b.key,
+                                    message=f"{b.type.title()} detected but no data was extracted."))
             if b.type == "table" and b.columns:
                 bad = [i for i, row in enumerate(b.rows or []) if len(row) != len(b.columns)]
                 if bad:
