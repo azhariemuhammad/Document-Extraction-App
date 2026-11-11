@@ -36,6 +36,8 @@ then `python -m pytest -q`, or `python -m core.cli samples/<file> --profile <id>
 
 ## Architecture
 
+<img width="417" height="725" alt="Screenshot 2026-11-11 at 4 11 46 pm" src="https://github.com/user-attachments/assets/02d527b3-5d1b-4241-b337-82357037e606" />
+
 ```
 Upload -> Loader (by MIME) -> [PageUnit] -> Extractor (per page: cache, retry, repair) -> Provider -> LLM
        -> [Block] + run metadata -> Validator -> ValidationReport -> Renderer -> Markdown -> UI / .md / eval
